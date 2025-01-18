@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Building</title>
+    <style>
+        /* Include your CSS here, same as the Influencer & Celebrities Marketing page */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, white, white);
+            color: white;
+            overflow-x: hidden;
+            transition: background 0.5s ease;
+        }
+        .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 15px 20px;
+}
+
+/* Logo container with logo and site title */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px; /* Adjust size of your logo */
+  height: auto;
+  margin-right: 15px;
+  border-radius: 50px;
+}
+
+.site-title {
+  font-size: 24px;
+  color: black;
+  font-weight: bold;
+}
+ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation links */
+ul li {
+  display: inline;
+}
+
+ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+ul li a:hover {
+  background-color: red; /* Button color on hover */
+  color: white;
+}
+
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 40px 10px;
+            font-size: 2.8em;
+            font: bolder;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: fadeIn 2s;
+            background: white;
+            color: black;
+            /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Scroll Progress Bar */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 5px;
+            background-color: #ff5f6d;
+            transition: width 0.1s ease-out;
+        }
+
+        /* Section container */
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;  /* Ensures text and image are spread apart */
+            margin: 40px 0;
+            gap: 20px;  
+            opacity: 0;  
+            transform: translateY(50px);  
+            transition: all 1s ease-in-out;
+        }
+
+        .section:nth-child(even) {
+            flex-direction: row-reverse;  
+        }
+
+        .section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section img {
+            width: 30%;
+            max-width: 350px;  /* Limit image width */
+            height: auto;
+            margin-right: 10%;
+            margin-left: 10%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .section img:hover {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            transform: scale(1.05);
+        }
+
+
+
+        .content {
+            width: 50%;
+            padding: 20px;
+            background: white;
+            border-radius: 30px;
+            margin-left: 20px;
+            margin-right: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .content h2 {
+            color: #333;
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+
+        .content p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+            transition: color 0.3s ease;
+        }
+
+        .content:hover h2, .content:hover p {
+            color: #ff5f6d;
+        }
+
+        .video-container {
+        position: relative;
+        width: 80%;
+        max-width: 900px;
+        margin: auto;
+        height: 500px;  /* Adjusted height */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        border-radius: 15px;
+        overflow: hidden;
+        margin-top: 40px;
+        background: #000;  /* Background to cover container when the video is not loaded */
+        animation: fadeInUp 1.5s ease-out;
+    }
+
+    .video-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    /* Overlay Effect */
+    .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);  /* Semi-transparent black overlay */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 1.5em;
+        opacity: 1;
+        transition: opacity 0.5s ease;
+    }
+
+    .video-container:hover .video-overlay {
+        opacity: 0;  /* Hide overlay when hovered (video starts playing) */
+    }
+
+    /* For Mobile Screens */
+    @media (max-width: 768px) {
+        .video-container {
+            width: 90%;
+            height: 350px;  /* Adjust height for smaller screens */
+        }
+    }
+
+        /* Button Container */
+        .button-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .button {
+            background-color: #ff5f6d;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 50px;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .button:hover {
+            background-color: #ffc371;
+            transform: scale(1.1);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Full-width intro-text */
+        .intro-text {
+            width: 100%;  /* Make the intro text span full width */
+            padding: 0%;
+            text-align: center;
+            font-size: 1.3em;
+            color: black;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            animation: slideInTop 2s ease-out;
+        }
+
+        /* Media Query for responsiveness */
+        @media (max-width: 768px) {
+            .section {
+                flex-direction: column;
+            }
+
+            .section img, .content {
+                width: 90%;
+            }
+
+            .video-container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="progress-bar"></div>
+    <div class="navbar">
+        <div class="logo-container">
+            <img src="Images/Pixsure.jpeg" alt="Logo" class="logo">
+            <div class="site-title">piXsure Media</div>
+        </div>
+        <ul>
+            <li><a href="index.html">Services</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a href="https://wa.me/9182183363">Let's Connect</a></li>
+        </ul>
+    </div>
+
+    <div class="header">
+        Website Building
+    </div>
+
+    <div class="intro-text">
+        Build a professional, modern, and responsive website that delivers an exceptional user experience and drives conversions.
+    </div>
+
+    <div class="section">
+        <img src="Images/Website1.jpg" alt="Responsive Web Design">
+        <div class="content">
+            <h2>Responsive Web Design</h2>
+            <p>We create websites that adapt seamlessly across all devices, ensuring a perfect user experience for every visitor.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <img src="Images/Website2.jpg" alt="E-commerce Websites">
+        <div class="content">
+            <h2>E-commerce Websites</h2>
+            <p>We build e-commerce websites with powerful features to help you manage your online store efficiently.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <img src="Images/Website3.jpg" alt="Content Management Systems">
+        <div class="content">
+            <h2>Content Management Systems</h2>
+            <p>We integrate user-friendly CMS platforms, allowing you to easily manage and update website content.</p>
+        </div>
+    </div>
+
+    <div class="video-container" onclick="toggleVideo()">
+        <iframe id="youtube-video" width="560" height="315" 
+                src="https://www.youtube.com/embed/XZTEyGR8o-Y?autoplay=1&enablejsapi=1" 
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+        </iframe>
+        <div class="video-overlay">Click to Play/Pause</div>
+    </div>
+
+    <div class="button-container">
+        <a href="https://wa.me/9182183363" class="button">Contact Us</a>
+    </div>
+
+    <script>
+        // JavaScript for scroll animations and functionality as in the Influencer Marketing page
+        const sections = document.querySelectorAll('.section');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);  // Stop observing once animated
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Scroll Progress Bar
+        window.onscroll = function() {
+            const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollProgress = (document.documentElement.scrollTop / docHeight) * 100;
+            document.getElementById('progress-bar').style.width = scrollProgress + '%';
+        };
+        
+        // Toggle Play/Pause functionality
+function toggleVideo() {
+    var iframe = document.getElementById("youtube-video");
+    var iframeSrc = iframe.src;
+    
+    // Check if the video is playing (autoplay)
+    if (iframeSrc.includes("autoplay=1")) {
+        // Remove autoplay to stop video
+        iframe.src = iframeSrc.replace("autoplay=1", "autoplay=0");
+    } else {
+        // Add autoplay to start video
+        iframe.src = iframeSrc.replace("autoplay=0", "autoplay=1");
+    }
+}
+
+    </script>
+</body>
+</html>

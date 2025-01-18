@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketing Services</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        color: #333;
+        overflow-x: hidden;
+    }
+    html {
+      scroll-behavior: smooth; /* Enables smooth scrolling for the entire page */
+    }
+    
+    /* Container Styling */
+.heading-container {
+  background: linear-gradient(135deg, #0d1b2a, #1b263b);
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  max-width: 900px;
+  margin: 50px auto;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Heading Title */
+.heading-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+/* Brand Name Styling */
+.heading-title .brand-name {
+  color: #ffd700; /* Gold color for premium look */
+}
+
+/* Subtitle */
+.heading-subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  color: #e0e0e0;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+    /* Navbar Styles */
+    /* Navbar styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 15px 20px;
+}
+
+/* Logo container with logo and site title */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px; /* Adjust size of your logo */
+  height: auto;
+  margin-right: 15px;
+  border-radius: 50px;
+}
+
+.site-title {
+  font-size: 24px;
+  color: black;
+  font-weight: bold;
+}
+
+/* Styling for navigation list */
+ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation links */
+ul li {
+  display: inline;
+}
+
+ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: red;
+  transition: background-color 0.3s;
+}
+
+ul li a:hover {
+  background-color: red; /* Button color on hover */
+  color: white;
+}
+    /* Hero Section */
+    /* Container styling */
+.stats-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 40px;
+  background: white;
+  border-radius: 15px;
+  /* box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2); */
+  color: black;
+  overflow: hidden;
+}
+
+/* Individual stat card styling */
+.stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect */
+.stat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Animated gradient border */
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(90deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+  z-index: -1;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease;
+}
+
+.stat-card:hover::before {
+  transform: translateY(0);
+}
+
+/* Stat icon styling */
+.stat-icon {
+  color: red; /* Luxurious gold color */
+  margin-bottom: 15px;
+}
+
+/* Hover Effect for Icon */
+.stat-card:hover .stat-icon {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+/* Stat number styling */
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Stat description styling */
+.stat-description {
+  font-size: 1rem;
+}
+
+/* Keyframe animation for the icon */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
+    /* Services Section */
+    .services {
+        padding: 10px 20px;
+        text-align: center;
+        background-color: white;
+    }
+
+    .services h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        font-style: bold;
+        color: black;
+    }
+
+    /* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 30px; /* Space between grid items */
+  padding: 20px;
+  background-color: white;
+}
+
+/* Card Style */
+.card {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 300px; /* Adjust the height as needed */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px gray;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+}
+
+.card__content {
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  padding: 20px;
+}
+
+.card__header {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.card__text {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.card__btn {
+  background-color: #f9a825;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.card__btn:hover {
+  background-color: #c17900;
+}
+
+.card__btn span {
+  margin-left: 5px;
+  font-size: 16px;
+}
+
+    .container {
+      width: 100%;
+      padding: 50px;
+      box-sizing: border-box;
+      background-color: white;
+      box-shadow: 0 10px 20px gray;
+      border-radius: 15px;
+    }
+
+    .container h1 {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 40px;
+      text-align: center;
+      color: black;
+    }
+
+    .stats {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 50px 10px;
+    }
+
+    .stat-item {
+      text-align: center;
+      margin: 20px;
+    }
+
+    .stat-item h2 {
+      font-size: 48px;
+      color: red;
+      font-weight: bold;
+      display: inline-block;
+      margin: 0;
+    }
+
+    .stat-item p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    /* CSS for number increase animation */
+    .stat-item h2 span {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: countUp 2s ease-out forwards;
+    }
+
+    /* Keyframes for the number animation */
+    @keyframes countUp {
+      0% {
+        opacity: 1;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .stat-item h2 {
+      display: inline-block;
+      position: relative;
+      font-size: 60px;
+    }
+    .main-container {
+    display: flex;
+    width: 100%;  /* Container takes 80% of the page width */
+    max-width: 2000px;
+    height: 500px;  /* Fixed height */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    /* border-radius: 15px; */
+    overflow: hidden;
+    padding-top: 10px;
+     /* margin: 10px 10px;  Center the main container horizontally */
+}
+
+.container1 {
+    flex: 1;  /* Takes half the width */
+    background-color: black;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.container1 h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: white; /* Original white text */
+}
+
+.form-input {
+    width: 60%; /* Adjusted for layout */
+    padding: 12px;
+    margin: 10px 0;
+    background-color: #222;
+    border: 1px solid #444;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.form-input::placeholder {
+    color: #888;
+}
+
+.btn {
+    width: 60%;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn:hover {
+    animation: shake 0.5s;
+    background: green;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+/* Right container */
+.right-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;  /* Hide overflow content */
+    position: relative;
+    background-color: #f9f9f9;
+}
+
+.image-slider {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    animation: slide 6s infinite; /* Total time depends on no. of images (1s per image) */
+}
+
+.image-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+@keyframes slide {
+    0%, 25% {
+        transform: translateX(0%);
+    }
+    25%, 50% {
+        transform: translateX(-100%);
+    }
+    50%, 75% {
+        transform: translateX(-200%);
+    }
+    75%, 100% {
+        transform: translateX(-300%);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .container1, .right-container {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .image-slider {
+        height: 100%;
+    }
+}
+.gradient-line {
+      border: 0;
+      height: 4px;
+      background: linear-gradient(to right, #ff8a00, #e52e71);
+      margin: 20px 40px;
+    }
+
+    /* Footer */
+    .footer {
+            background-color: #24292e;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        /* Social Media Icons Styles */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 10px;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            color: white;
+            font-size: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+</style>
+
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <!-- Logo and Site Title -->
+    <div class="logo-container">
+      <img src="Images/Pixsure.jpeg" alt="Logo" class="logo"> <!-- Replace with your logo -->
+      <div class="site-title">piXsure Media</div>
+    </div>
+    
+    <!-- Navigation links -->
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#careers">Careers</a></li>
+      <li><a href="https://wa.me/9182183363">Let's Connect</a></li>
+    </ul>
+  </div>
+  
+  <div class="heading-container">
+    <h1 class="heading-title">Unlock Your Digital Potential with <span class="brand-name">piXsure Media</span></h1>
+    <p class="heading-subtitle">Transform your business with creative and effective solutions!</p>
+  </div>
+  
+  <!-- Hero Section -->
+  <div class="stats-container">
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fas fa-file-invoice fa-3x"></i></div>
+      <h2 class="stat-number">100+</h2>
+      <p class="stat-description">Brochures Delivered</p>
+    </div>
+  
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fas fa-globe fa-3x"></i></div>
+      <h2 class="stat-number">200+</h2>
+      <p class="stat-description">Websites Created</p>
+    </div>
+  
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fas fa-bullhorn fa-3x"></i></div>
+      <h2 class="stat-number">300+</h2>
+      <p class="stat-description">Marketing Campaigns</p>
+    </div>
+  
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fas fa-palette fa-3x"></i></div>
+      <h2 class="stat-number">150+</h2>
+      <p class="stat-description">Logos Designed</p>
+    </div>
+  
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fas fa-users fa-3x"></i></div>
+      <h2 class="stat-number">50+</h2>
+      <p class="stat-description">Influencer Partnerships</p>
+    </div>
+  </div>
+  
+
+  <!-- JavaScript -->
+  <script>
+  
+    function animateCounter() {
+      const counters = document.querySelectorAll('.counter');
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        let count = 0;
+        const increment = target / 100; // Adjust this value to control the speed
+
+        const updateCounter = () => {
+          if (count < target) {
+            count += increment;
+            counter.textContent = Math.ceil(count);
+            setTimeout(updateCounter, 20); // Update every 20 milliseconds
+          } else {
+            counter.textContent = target;
+          }
+        };
+        updateCounter();
+      });
+    }
+
+    // Wait for the page to load then start the animation
+    window.onload = animateCounter;
+
+    function sendMessage() {
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const mobile = document.getElementById("mobile").value;
+  const company = document.getElementById("company").value;
+  const service = document.getElementById("service").value;
+
+  if (!name || !mobile || !company || service === "Select The Services") {
+    alert("Please fill out all the fields.");
+    return;
+  }
+  if (mobile.length !== 10) {
+    alert("Please provide a valid 10-digit mobile number.");
+    return;
+  }
+
+  const message = `Hi, this is ${name} from ${company}. I'm interested in your ${service} services. You can contact me at ${mobile} or email me at ${email}. Let's discuss how we can work together. Thank you!`;
+
+  // Redirect to WhatsApp Business with pre-filled message
+  const whatsappNumber = "9182183363"; // Replace with your WhatsApp Business number
+  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  window.location.href = whatsappURL;
+}
+</script>
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <h2>Our Services</h2>
+    <hr class="gradient-line">
+    <div class="grid">
+      <!-- Service 1 -->
+      <div class="grid__item">
+        <div class="card" style="background-image: url('Images/Influencer.png');">
+          <div class="card__content">
+            <h1 class="card__header">Influence & Celebrity Marketing</h1>
+            <p class="card__text">Leverage influencers to expand your reach.</p>
+            <a href="influencer-marketing.html" class="card__btn">Explore <span>&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Service 2 -->
+      <div class="grid__item">
+        <div class="card" style="background-image: url('Images/Advert.jpg');">
+          <div class="card__content">
+            <h1 class="card__header">Advertising Marketing</h1>
+            <p class="card__text">Promote your brand through strategic ad campaigns.</p>
+            <a href="advertising-marketing.html" class="card__btn">Explore <span>&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Service 3 -->
+      <div class="grid__item">
+        <div class="card" style="background-image: url('Images/SocialMedia1.jpg');">
+          <div class="card__content">
+            <h1 class="card__header">Social Media Marketing</h1>
+            <p class="card__text">Engage with your audience through social platforms.</p>
+            <a href="social-media-marketing.html" class="card__btn">Explore <span>&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Service 4 -->
+      <div class="grid__item">
+        <div class="card" style="background-image: url('Images/SocialHandling1.jpg');">
+          <div class="card__content">
+            <h1 class="card__header">Social Media Handling</h1>
+            <p class="card__text">Manage your online presence effectively.</p>
+            <a href="social-media-handling.html" class="card__btn">Explore <span>&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Service 5 -->
+      <div class="grid__item">
+        <div class="card" style="background-image: url('Images/PR1.jpg');">
+          <div class="card__content">
+            <h1 class="card__header">Public Relations</h1>
+            <p class="card__text">Build and maintain a positive brand reputation.</p>
+            <a href="public-relations.html" class="card__btn">Explore <span>&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Service 6 -->
+      <div class="grid__item">
+        <div class="card" style="background-image: url('Images/BrandMarketing1.jpg');">
+          <div class="card__content">
+            <h1 class="card__header">Brand Marketing</h1>
+            <p class="card__text">Establish your brand as a market leader.</p>
+            <a href="brand-marketing.html" class="card__btn">Explore <span>&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Service 7 -->
+      <div class="grid__item">
+        <div class="card" style="background-image: url('Images/Email1.jpg');">
+          <div class="card__content">
+            <h1 class="card__header">Email & WhatsApp Marketing</h1>
+            <p class="card__text">Reach your customers with personalized messages.</p>
+            <a href="email-marketing.html" class="card__btn">Explore <span>&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Service 8 -->
+      <div class="grid__item">
+        <div class="card" style="background-image: url('Images/Event3.jpg');">
+          <div class="card__content">
+            <h1 class="card__header">Event Management</h1>
+            <p class="card__text">Plan and execute events to promote your brand.</p>
+            <a href="event-management.html" class="card__btn">Explore <span>&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Service 9 -->
+      <div class="grid__item">
+        <div class="card" style="background-image: url('Images/SEO2.jpg');">
+          <div class="card__content">
+            <h1 class="card__header">Search Engine Optimization</h1>
+            <p class="card__text">Boost your website visibility on search engines.</p>
+            <a href="seo-optimization.html" class="card__btn">Explore <span>&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Service 10 -->
+      <div class="grid__item">
+        <div class="card" style="background-image: url('Images/Ads2.jpg');">
+          <div class="card__content">
+            <h1 class="card__header">Ad Shooting</h1>
+            <p class="card__text">Create impactful ads for campaigns.</p>
+            <a href="ad-shooting.html" class="card__btn">Explore <span>&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Service 11 -->
+      <div class="grid__item">
+        <div class="card" style="background-image: url('Images/Content1.jpg');">
+          <div class="card__content">
+            <h1 class="card__header">Content Writing</h1>
+            <p class="card__text">Produce high-quality content for your audience.</p>
+            <a href="content-writing.html" class="card__btn">Explore <span>&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Service 12 -->
+      <div class="grid__item">
+        <div class="card" style="background-image: url('Images/Review3.jpg');">
+          <div class="card__content">
+            <h1 class="card__header">Reviews Marketing</h1>
+            <p class="card__text">Enhance trust with positive customer reviews.</p>
+            <a href="reviews-marketing.html" class="card__btn">Explore <span>&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Service 13 -->
+      <div class="grid__item">
+        <div class="card" style="background-image: url('Images/Offline.jpeg');">
+          <div class="card__content">
+            <h1 class="card__header">Offline Marketing</h1>
+            <p class="card__text">Drive engagement through traditional marketing methods.</p>
+            <a href="offline-marketing.html" class="card__btn">Explore <span>&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Service 14 -->
+      <div class="grid__item">
+        <div class="card" style="background-image: url('Images/Web.jpeg');">
+          <div class="card__content">
+            <h1 class="card__header">Website Building</h1>
+            <p class="card__text">Design and develop a professional website.</p>
+            <a href="website-development.html" class="card__btn">Explore <span>&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="grid__item">
+        <div class="card" style="background-image: url('Images/App.jpg');">
+          <div class="card__content">
+            <h1 class="card__header">App Promotion</h1>
+            <p class="card__text">Promote your products and apps to reach a wider audience.</p>
+            <a href="product-app-marketing.html" class="card__btn">Explore <span>&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Service 16: Logo Design and Poster Creation -->
+      <div class="grid__item">
+        <div class="card" style="background-image: url('Images/Poster.jpg');">
+          <div class="card__content">
+            <h1 class="card__header">Logo Design & Poster Creation</h1>
+            <p class="card__text">Design striking logos and posters to represent your brand.</p>
+            <a href="logo-design-poster-creation.html" class="card__btn">Explore <span>&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+  <div class="container">
+    <h1>Bringing Over 5+ Years of Industry Expertise</h1>
+    <div class="stats">
+      <div class="stat-item">
+        <h2><span class="counter" data-target="20">0</span>+</h2>
+        <p>Inspired Innovators</p>
+      </div>
+      <div class="stat-item">
+        <h2><span class="counter" data-target="40">0</span>+</h2>
+        <p>Brand Partnerships</p>
+      </div>
+      <div class="stat-item">
+        <h2><span class="counter" data-target="150">0</span>+</h2>
+        <p>Delivered Projects</p>
+      </div>
+      <div class="stat-item">
+        <h2><span class="counter" data-target="4">0</span>+</h2>
+        <p>Key Industries</p>
+      </div>
+    </div>
+  </div>
+  <div class="main-container">
+    <div class="container1">
+      <h1>Let's Connect</h1>
+      <input type="text" id="name" class="form-input" placeholder="Your Name">
+      <input type="email" id="email" class="form-input" placeholder="Email">
+      <input type="tel" id="mobile" class="form-input" placeholder="Mobile No">
+      <input type="text" id="company" class="form-input" placeholder="Company Name">
+      <select id="service" class="form-input">
+        <option disabled selected>Select The Services</option>
+        <option>Ad Shooting</option>
+        <option>Advertising Marketing</option>
+        <option>Brand Marketing</option>
+        <option>Content Writing</option>
+        <option>Email & Whatsapp Handling</option>
+        <option>Event Management</option>
+        <option>Influence & Celebrity Marketing</option>
+        <option>Offline Marketing</option>
+        <option>Public Relations</option>
+        <option>Review Writing</option>
+        <option>SEO</option>
+        <option>Social Media Handling</option>
+        <option>Social Media Marketing</option>
+        <option>Website Building</option>
+      </select>
+      <button class="btn" onclick="sendMessage()">Let's Get Connect</button>
+    </div>
+    
+    
+
+    <div class="right-container">
+      <div class="image-slider">
+          <img src="Images/image1.jpg">
+          <img src="Images/image2.jpg">
+          <img src="Images/image3.jpg">
+          <img src="Images/image4.jpg">
+          <img src="Images/image5.jpg"
+
+          <!-- Add more images as needed -->
+      </div>
+  </div>
+</div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="social-icons">
+        <a href="https://www.instagram.com/pixsuremedia?igsh=dnpmdWlyemNuZDlh" target="_blank"><i class="fab fa-instagram" ></i></a>
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=Pixsuremedia@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+        <a href="https://wa.me/message/AXAP4UAM3Y4HO1" target="_blank"><i class="fab fa-whatsapp" ></i></a>
+    </div>
+    <p>Copyright &copy; 2024 piXsure Media | All rights reserved.</p>
+</div>
+</body>
+</html>
